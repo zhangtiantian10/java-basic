@@ -1,12 +1,21 @@
 package cn.school.thoughtworks.section2;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class PracticeC {
     Map<String, Integer> countSameElements(List<String> collection1) {
-        //实现练习要求，并改写该行代码。
+        Map<String, Integer> results = new HashMap<>();
+        PracticeA practiceA = new PracticeA();
+        PracticeB practiceB = new PracticeB();
 
-        return null;
+        collection1 = practiceB.formatCollection(collection1);
+
+        for (String str : collection1) {
+            results.put(str, practiceA.countElementsInMap(results, str));
+        }
+
+        return results;
     }
 }
